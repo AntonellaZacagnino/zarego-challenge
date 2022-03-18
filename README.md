@@ -5,8 +5,11 @@ A simple Pokédex with a list po Pokémon, you can see the basic information, st
 # Run the project
 
 ```
-- first
+### first
+
 npm install
-- and then
+
+### and then
+
 npm run dev
 ```
