@@ -1,0 +1,78 @@
+@import "../styles/variables.module.scss";
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px;
+  justify-content: center;
+}
+.list:hover .card {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.paginator {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  .next,
+  .prev {
+    border-radius: 20px;
+    width: 9rem;
+  }
+  .next,
+  .prev,
+  .page,
+  .break {
+    margin: 0 5px;
+    height: 2rem;
+    background-color: white;
+    border: 2px solid $light-gray;
+    color: $medium-gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .next:hover,
+  .prev:hover,
+  .page:hover,
+  .break:hover {
+    background-color: $medium-gray;
+    border-color: $medium-gray;
+    color: $light-gray;
+  }
+  .page,
+  .break {
+    border-radius: 10px;
+    width: 2.5rem;
+  }
+  .disabled {
+    cursor: not-allowed;
+    background-color: $light-gray;
+  }
+  .disabled:hover {
+    background-color: $light-gray;
+    color: $medium-gray;
+    border-color: $light-gray;
+  }
+  .page.active {
+    background-color: $medium-gray;
+    border-color: $medium-gray;
+    color: $light-gray;
+  }
+}
+
+@media (max-width: 420px) {
+  .page,
+  .break {
+    display: none !important;
+  }
+  .paginator {
+    justify-content: space-between !important;
+    padding: 0 10px !important;
+  }
+}

@@ -1,0 +1,52 @@
+@import "../styles/variables.module.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  .image {
+    width: 3rem;
+    height: 3rem;
+  }
+  h1 {
+    margin-left: 20px;
+  }
+  .langBtn {
+    margin-left: auto;
+    margin-right: 5rem;
+    background-color: white;
+    border: 2px solid $light-gray;
+    width: 8rem;
+    height: 2.5rem;
+    font-size: 18px;
+    border-radius: 2rem;
+    color: $medium-gray;
+    font-family: "Poppins";
+  }
+  .langBtn:hover {
+    background-color: $medium-gray;
+    border-color: $medium-gray;
+    color: white;
+  }
+  .sort {
+    display: flex;
+    .arrow {
+      transform: rotate(180deg);
+      height: 25px;
+      padding-right: 5px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .image {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  .langBtn {
+    width: 5rem !important;
+    height: 2rem !important;
+    font-size: 14px !important;
+    margin-right: 1rem !important;
+  }
+}

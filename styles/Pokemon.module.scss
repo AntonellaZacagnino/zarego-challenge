@@ -1,0 +1,491 @@
+@import "../styles/variables.module.scss";
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  z-index: 11;
+  animation: fadeIn 0.5s;
+  .modal {
+    background: white;
+    width: 500px;
+    height: 66rem;
+    -bottom: 20%;
+    border-radius: 15px;
+    padding: 10px;
+    z-index: 10;
+    animation: fadeIn 0.5s;
+  }
+  .header {
+    color: white;
+    display: flex;
+    font-size: 25px;
+    align-items: center;
+    padding: 20px;
+    .name {
+      font-size: 30px;
+      padding-left: 20px;
+      text-transform: capitalize;
+      font-weight: bold;
+      width: 22rem;
+    }
+    .code {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .arrow {
+      width: 10rem;
+      filter: brightness(100);
+    }
+  }
+  .body {
+    padding-top: 10px;
+    text-align: center;
+    .image {
+      width: 70%;
+    }
+    .infoContainer {
+      border-radius: 10px;
+      padding: 10px;
+      height: 37rem;
+      background-color: white;
+      position: relative;
+      bottom: 5rem;
+      z-index: -1;
+      padding-top: 5rem;
+      .type {
+        color: white;
+        padding: 5px 10px;
+        border-radius: 25px;
+        font-size: 14px;
+        text-transform: capitalize;
+        font-weight: bold;
+        margin: 0px 10px;
+      }
+      .generalInfo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-height: 5rem;
+        .height,
+        .weight {
+          border-right: 2px solid $light-gray;
+        }
+        .height p,
+        .weight p {
+          margin-left: 10px;
+        }
+        .moves p {
+          margin: 5px 0px;
+          font-size: 14px;
+          text-transform: capitalize;
+        }
+        .displayFlex {
+          justify-content: center;
+        }
+        .height,
+        .weight,
+        .moves {
+          padding: 0 25px;
+          width: 8rem;
+        }
+        .height span,
+        .weight span,
+        .moves span {
+          font-size: 12px;
+          color: $medium-gray;
+        }
+        .moves span {
+          margin-top: 5px;
+        }
+      }
+      .description {
+        margin-top: 30px;
+      }
+      .stats {
+        ul {
+          list-style: none;
+          padding: 0 15px;
+          li {
+            display: flex;
+            align-items: center;
+            .statName {
+              font-weight: bold;
+              font-family: "Poppins";
+              width: 60px;
+              text-align: right;
+              border-right: 2px solid $light-gray;
+              margin-right: 15px;
+              padding-right: 15px;
+            }
+            .percentage {
+              margin-left: 15px;
+              width: 100%;
+              height: 5px;
+              background-color: $light-gray;
+              border-radius: 5px;
+              .colorBar {
+                height: 5px;
+                border-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .overlay {
+    height: 150rem;
+  }
+  .modal {
+    width: -webkit-fill-available !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.rock {
+  &.card {
+    border-color: $rock;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $rock;
+  }
+  &.overlay {
+    background-color: #b69e3180;
+  }
+  &.title,
+  &.statName {
+    color: $rock;
+  }
+}
+.ghost {
+  &.card {
+    border-color: $ghost;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $ghost;
+  }
+  &.overlay {
+    background-color: #70559b80;
+  }
+  &.title,
+  &.statName {
+    color: $ghost;
+  }
+}
+
+.steel {
+  &.card {
+    border-color: $steel;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $steel;
+  }
+  &.overlay {
+    background-color: #b7b9d080;
+  }
+  &.title,
+  &.statName {
+    color: $steel;
+  }
+}
+
+.water {
+  &.card {
+    border-color: $water;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $water;
+  }
+  &.overlay {
+    background-color: #6493eb80;
+  }
+  &.title,
+  &.statName {
+    color: $water;
+  }
+}
+
+.grass {
+  &.card {
+    border-color: $grass;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $grass;
+  }
+  &.overlay {
+    background-color: #74cb4880;
+  }
+  &.title,
+  &.statName {
+    color: $grass;
+  }
+}
+
+.psychic {
+  &.card {
+    border-color: $psychic;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $psychic;
+  }
+  &.overlay {
+    background-color: #fb558480;
+  }
+  &.title,
+  &.statName {
+    color: $psychic;
+  }
+}
+.ice {
+  &.card {
+    border-color: $ice;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $ice;
+  }
+  &.overlay {
+    background-color: #9ad6df80;
+  }
+  &.title,
+  &.statName {
+    color: $ice;
+  }
+}
+
+.dark {
+  &.card {
+    border-color: $dark;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $dark;
+  }
+  &.overlay {
+    background-color: #75574c80;
+  }
+  &.title,
+  &.statName {
+    color: $dark;
+  }
+}
+
+.fairy {
+  &.card {
+    border-color: $fairy;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $fairy;
+  }
+  &.overlay {
+    background-color: #e69eac80;
+  }
+  &.title,
+  &.statName {
+    color: $fairy;
+  }
+}
+
+.normal {
+  &.card {
+    border-color: $normal;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $normal;
+  }
+  &.overlay {
+    background-color: #aaa67f80;
+  }
+  &.title,
+  &.statName {
+    color: $normal;
+  }
+}
+
+.fighting {
+  &.card {
+    border-color: $fighting;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $fighting;
+  }
+  &.overlay {
+    background-color: #c1223980;
+  }
+  &.title,
+  &.statName {
+    color: $fighting;
+  }
+}
+
+.flying {
+  &.card {
+    border-color: $flying;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $flying;
+  }
+  &.overlay {
+    background-color: #a891ec80;
+  }
+  &.title,
+  &.statName {
+    color: $flying;
+  }
+}
+
+.poison {
+  &.card {
+    border-color: $poison;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $poison;
+  }
+  &.overlay {
+    background-color: #a43e9e80;
+  }
+  &.title,
+  &.statName {
+    color: $poison;
+  }
+}
+
+.ground {
+  &.card {
+    border-color: $ground;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $ground;
+  }
+  &.overlay {
+    background-color: #dec16b80;
+  }
+  &.title,
+  &.statName {
+    color: $ground;
+  }
+}
+
+.bug {
+  &.card {
+    border-color: $bug;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $bug;
+  }
+  &.overlay {
+    background-color: #a7b72380;
+  }
+  &.title,
+  &.statName {
+    color: $bug;
+  }
+}
+
+.fire {
+  &.card {
+    border-color: $fire;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $fire;
+  }
+  &.overlay {
+    background-color: #f57d3180;
+  }
+  &.title,
+  &.statName {
+    color: $fire;
+  }
+}
+
+.electric {
+  &.card {
+    border-color: $electric;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $electric;
+  }
+  &.overlay {
+    background-color: #f9cf3080;
+  }
+  &.title,
+  &.statName {
+    color: $electric;
+  }
+}
+
+.dragon {
+  &.card {
+    border-color: $dragon;
+  }
+  &.modal,
+  &.type,
+  &.colorBar {
+    background-color: $dragon;
+  }
+  &.overlay {
+    background-color: #7037ff80;
+  }
+  &.title,
+  &.statName {
+    color: $dragon;
+  }
+}

@@ -1,0 +1,29 @@
+@import "../styles/variables.module.scss";
+
+.search {
+  display: flex;
+  justify-content: center;
+  input {
+    height: 2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    font-family: "Poppins";
+    font-size: 1rem;
+  }
+  .image {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: 0.8rem;
+    left: 3rem;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 420px) {
+  .image {
+    left: 2rem !important;
+  }
+}

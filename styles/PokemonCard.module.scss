@@ -1,0 +1,261 @@
+@import "../styles/variables.module.scss";
+
+.card {
+  list-style: none;
+  display: flex;
+  height: 380px;
+  width: 380px;
+  margin: 10px;
+  border: 2px solid red;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  transition: 0.2s all;
+  .image {
+    height: 250px;
+    width: 250px;
+  }
+  .code {
+    position: relative;
+    top: 1rem;
+    left: 8rem;
+    font-size: 20px;
+  }
+  .name {
+    width: 100%;
+    height: 20%;
+    position: relative;
+    top: 8px;
+    padding-left: 1px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: white;
+    font-size: 28px;
+    display: flex;
+    text-transform: capitalize;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.card:hover {
+  transform: scale(0.93);
+  opacity: 0.7;
+  box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.rock {
+  &.card {
+    border-color: $rock;
+  }
+  &.name {
+    background-color: $rock;
+  }
+  &.code {
+    color: $rock;
+  }
+}
+.ghost {
+  &.card {
+    border-color: $ghost;
+  }
+  &.name {
+    background-color: $ghost;
+  }
+  &.code {
+    color: $ghost;
+  }
+}
+
+.steel {
+  &.card {
+    border-color: $steel;
+  }
+  &.name {
+    background-color: $steel;
+  }
+  &.code {
+    color: $steel;
+  }
+}
+
+.water {
+  &.card {
+    border-color: $water;
+  }
+  &.name {
+    background-color: $water;
+  }
+  &.code {
+    color: $water;
+  }
+}
+
+.grass {
+  &.card {
+    border-color: $grass;
+  }
+  &.name {
+    background-color: $grass;
+  }
+  &.code {
+    color: $grass;
+  }
+}
+
+.psychic {
+  &.card {
+    border-color: $psychic;
+  }
+  &.name {
+    background-color: $psychic;
+  }
+  &.code {
+    color: $psychic;
+  }
+}
+.ice {
+  &.card {
+    border-color: $ice;
+  }
+  &.name {
+    background-color: $ice;
+  }
+  &.code {
+    color: $ice;
+  }
+}
+
+.dark {
+  &.card {
+    border-color: $dark;
+  }
+  &.name {
+    background-color: $dark;
+  }
+  &.code {
+    color: $dark;
+  }
+}
+
+.fairy {
+  &.card {
+    border-color: $fairy;
+  }
+  &.name {
+    background-color: $fairy;
+  }
+  &.code {
+    color: $fairy;
+  }
+}
+
+.normal {
+  &.card {
+    border-color: $normal;
+  }
+  &.name {
+    background-color: $normal;
+  }
+  &.code {
+    color: $normal;
+  }
+}
+
+.fighting {
+  &.card {
+    border-color: $fighting;
+  }
+  &.name {
+    background-color: $fighting;
+  }
+  &.code {
+    color: $fighting;
+  }
+}
+
+.flying {
+  &.card {
+    border-color: $flying;
+  }
+  &.name {
+    background-color: $flying;
+  }
+  &.code {
+    color: $flying;
+  }
+}
+
+.poison {
+  &.card {
+    border-color: $poison;
+  }
+  &.name {
+    background-color: $poison;
+  }
+  &.code {
+    color: $poison;
+  }
+}
+
+.ground {
+  &.card {
+    border-color: $ground;
+  }
+  &.name {
+    background-color: $ground;
+  }
+  &.code {
+    color: $ground;
+  }
+}
+
+.bug {
+  &.card {
+    border-color: $bug;
+  }
+  &.name {
+    background-color: $bug;
+  }
+  &.code {
+    color: $bug;
+  }
+}
+
+.fire {
+  &.card {
+    border-color: $fire;
+  }
+  &.name {
+    background-color: $fire;
+  }
+  &.code {
+    color: $fire;
+  }
+}
+
+.electric {
+  &.card {
+    border-color: $electric;
+  }
+  &.name {
+    background-color: $electric;
+  }
+  &.code {
+    color: $electric;
+  }
+}
+
+.dragon {
+  &.card {
+    border-color: $dragon;
+  }
+  &.name {
+    background-color: $dragon;
+  }
+  &.code {
+    color: $dragon;
+  }
+}
