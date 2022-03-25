@@ -7,9 +7,10 @@ A simple Pokédex with a list po Pokémon, you can see the basic information, st
 ```
 ### first
 
-npm install
+- npm install
 
 ### and then
 
-npm run dev
+- npm run build
+- npm run start
 ```
