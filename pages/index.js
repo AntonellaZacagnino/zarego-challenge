@@ -14,13 +14,18 @@ function Home({list}) {
   const itemsPerPage = 5
   const nextItems = initialItems + itemsPerPage;
   const [actualList, setActualList] = useState(list)
+  const [currentPage,setCurrentPage] = useState(0)
   useEffect(() => {
     setPageCount(Math.ceil(actualList.length / itemsPerPage));
   }, [actualList]);
 
-  function sort(order){
-
-    const sorted = [...list].sort((a,b) => {
+  function sort(pokemonList, order){
+    if (pokemonList.length == 151){
+      var newList = list;
+    } else{
+      var newList = pokemonList
+    }
+    const sorted = [...newList].sort((a,b) => {
       if (order == 'ASC' && a.id < b.id){
         setSortOrder('DESC')
         document.getElementById('arrow').setAttribute('style', 'transform: rotate(180deg);')
@@ -34,17 +39,31 @@ function Home({list}) {
     setActualList(sorted)
   }
 
+  function makeSort(pokemonList){
+    const sorted = [...pokemonList].sort((a,b) => {
+      if (sortOrder == 'ASC' && a.id < b.id){
+        return 1
+      } else if (sortOrder == 'DESC' && a.id > b.id){
+        return -1
+      }
+    });
+    return sorted;
+  }
+
   function search(event){
-    setActualList(list)
+    let results = []
     if (event.key == 'Enter'){
-      let results = []
       actualList.map(
         (pokemon) => { 
-          if (pokemon.name == event.target.value) {
+          if (pokemon.name.includes(event.target.value)) {
             results.push(pokemon)
-          }
+          } 
         })
-        setActualList(results)
+        setActualList(makeSort(results))
+        setInitialItems(0)
+      } else if (event.key == 'Backspace'){
+        setInitialItems(currentPage)
+        setActualList(makeSort(list))
       }
   }
   return (
@@ -56,15 +75,16 @@ function Home({list}) {
         <style>{`
           html {
             background-color: #f7f7f7;
-          font-family: "Poppins";
+          font-family: "PoppinsRegular";
           }
         `}
         </style>
+        
         </Head>
-        <Header order={sortOrder} sort={sort}/>
+        <Header list={actualList} order={sortOrder} sort={sort}/>
         <Search search={search} />
         <main className={styles.main}>
-          <PokemonList itemsPerPage={itemsPerPage} list={actualList} currentPokemons={actualList.slice(initialItems, nextItems)} pageCount={pageCount} setInitialItems={setInitialItems} />
+          <PokemonList itemsPerPage={itemsPerPage} list={actualList} currentPokemons={actualList.slice(initialItems, nextItems)} pageCount={pageCount} setInitialItems={setInitialItems} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         </main>
         <footer className={styles.footer}>
           <p>Antonella Zacagnino - 2022 - <a href="https://github.com/AntonellaZacagnino" ><img src='./github.png' alt="github" /></a></p>
@@ -74,7 +94,7 @@ function Home({list}) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let list = [];
   try {
     let data = await getPokemonList();

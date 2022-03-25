@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import styles from '../styles/Header.module.scss'
 import {LanguageContext} from "../context/languageContext";
 
-function Header({sort, order}) {
+function Header({list, sort, order}) {
     const {language, activeLanguage} = useContext(LanguageContext)
     const actualLang = language;
     return (
@@ -12,7 +12,7 @@ function Header({sort, order}) {
             <button className={styles.langBtn} onClick={() => activeLanguage(actualLang == 'en' ? 'es' : 'en')}>{actualLang == 'en' ? 'Spanish' : 'Inglés'} </button>
             <div className={styles.sort}>
                 <span className={styles.tag}>#</span>
-                <img id="arrow" onClick={() => sort(order)} className={styles.arrow} src='./arrow.svg' />
+                <img id="arrow" onClick={() => sort(list, order)} className={styles.arrow} src='./arrow.svg' />
             </div>
         </div>
     )

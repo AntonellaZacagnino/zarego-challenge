@@ -31,12 +31,12 @@
       font-size: 30px;
       padding-left: 20px;
       text-transform: capitalize;
-      font-weight: bold;
+      font-family: "PoppinsBold";
       width: 22rem;
     }
     .code {
       font-size: 15px;
-      font-weight: bold;
+      font-family: "PoppinsBold";
     }
     .arrow {
       width: 10rem;
@@ -64,7 +64,7 @@
         border-radius: 25px;
         font-size: 14px;
         text-transform: capitalize;
-        font-weight: bold;
+        font-family: "PoppinsBold";
         margin: 0px 10px;
       }
       .generalInfo {
@@ -115,8 +115,7 @@
             display: flex;
             align-items: center;
             .statName {
-              font-weight: bold;
-              font-family: "Poppins";
+              font-family: "PoppinsBold";
               width: 60px;
               text-align: right;
               border-right: 2px solid $light-gray;

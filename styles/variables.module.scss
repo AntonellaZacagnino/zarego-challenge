@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../public/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../public/fonts/Poppins-Bold.ttf");
+}
 
 $rock: #b69e31;
 $ghost: #70559b;
